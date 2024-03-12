@@ -7,4 +7,3 @@ for n in range(97, 123):
         s = "{}{}".format(s, chr(n))
 s = s[::-1]
 print(s, end="")
-
