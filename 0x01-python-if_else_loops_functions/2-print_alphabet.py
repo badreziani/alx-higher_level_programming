@@ -1,3 +1,5 @@
 #!/usr/bin/python3
+s = ""
 for ascii_code in range(97, 123):
-    print(f"{chr(ascii_code)}", end="")
+    s = f"{s}{chr(ascii_code)}"
+print(s, end="")
