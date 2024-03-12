@@ -6,5 +6,5 @@ for n in range(97, 123):
     else:
         s = "{}{}".format(s, chr(n))
 s = s[::-1]
-print(s)
+print(s, end="")
 
