@@ -16,17 +16,27 @@ listint_t *insert_node(listint_t **head, int number)
 	new->n = number;
 	new->next = NULL;
 	tmp = *head;
-	if (!tmp || tmp->n > number)
+	if (!tmp)
+	{
+		tmp = new;
+		return (tmp);
+	}
+	if (tmp->n > number)
 	{
 		new->next = tmp;
-		tmp->next = new;
-		return (new);
+		tmp = new;
+		return (tmp);
 	}
 	while (tmp)
 	{
-		if(!tmp->next || tmp->next->n > number)
+		if(!tmp->next)
 		{
-			new->next = tmp->next;
+			tmp->next = new;
+			return (tmp);
+		}
+		else if (tmp->next > number)
+		{
+			new->next = tmp->next
 			tmp->next = new;
 			return (new);
 		}
