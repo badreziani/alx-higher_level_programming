@@ -14,10 +14,12 @@ listint_t *insert_node(listint_t **head, int number)
 	if (!new)
 		return (NULL);
 	new->n = number;
+	new->next = NULL;
 	tmp = *head;
 	if (!tmp || tmp->n > number)
 	{
 		new->next = tmp;
+		tmp->next = new
 		return (new);
 	}
 	while (tmp)
