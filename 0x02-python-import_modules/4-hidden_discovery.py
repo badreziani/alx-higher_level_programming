@@ -6,4 +6,3 @@ if __name__ == "__main__":
     names = [name for name in names if name[:2] != "__"]
     for name in names:
         print(name)
-
