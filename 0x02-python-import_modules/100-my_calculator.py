@@ -15,5 +15,5 @@ if __name__ == "__main__":
             b = int(args[3])
             operations = {"+": add, "-": sub, "*": mul, "/": div}
             s = "{:d} {:s} {:d} = {:d}"
-            print(s.format(a, args[2], b, oparations[args[2]](a, b)))
+            print(s.format(a, args[2], b, operations[args[2]](a, b)))
             sys.exit(0)
