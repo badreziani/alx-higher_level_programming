@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-def print_matrix_integer(matrix=[[]]):
+def divisible_by_2(my_list=[]):
     """
-    Prints a matrix of integers.
+    Finds all multiples of 2 in a list.
     """
+    return [el % 2 == 0 for el in my_list]

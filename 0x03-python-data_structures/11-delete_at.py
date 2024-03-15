@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-def print_matrix_integer(matrix=[[]]):
+def delete_at(my_list=[], idx=0):
     """
-    Prints a matrix of integers.
+    Deletes the item at a specific position in a list.
     """
+    if 0 <= idx < len(my_list):
+        return [el for el in my_list if my_list.index(el) != idx]

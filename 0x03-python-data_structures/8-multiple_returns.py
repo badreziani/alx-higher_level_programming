@@ -1,5 +1,9 @@
 #!/usr/bin/python3
-def print_matrix_integer(matrix=[[]]):
+def multiple_returns(sentence):
     """
-    Prints a matrix of integers.
+    Returns a tuple with the length of a string
+    and its first character
     """
+    if sentence == "":
+        return 0, None
+    return len(sentence), sentence[0]
