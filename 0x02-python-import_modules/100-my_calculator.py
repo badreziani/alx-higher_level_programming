@@ -7,19 +7,13 @@ if __name__ == "__main__":
         print("Usage: ./100-my_calculator.py <a> <operator> <b>")
         sys.exit(1)
     else:
-        s = "{:d} {:s} {:d} = {:d}"
-        if args[2] == "+":
-            print(s.format(int(a), argv[2], int(b), add(int(a), int(b))))
-            sys.exit(0)
-        elif args[2] == "-":
-            print(s.format(int(a), argv[2], int(b), sub(int(a), int(b))))
-            sys.exit(0)
-        elif args[2] == "*":
-            print(s.format(int(a), argv[2], int(b), mul(int(a), int(b))))
-            sys.exit(0)
-        elif args[2] == "/":
-            print(s.format(int(a), argv[2], int(b), div(int(a), int(b))))
-            sys.exit(0)
-        else:
+        if args[2] not in "+-*/":
             print("Unknown operator. Available operators: +, -, * and /")
             sys.exit(1)
+        else:
+            a = int(args[1])
+            b = int(args[3])
+            operations = {"+": add, "-": sub, "*": mul, "/": div}
+            s = "{:d} {:s} {:d} = {:d}"
+            print(s.format(a, args[2], b, oparations[args[2]](a, b)))
+            sys.exit(0)
