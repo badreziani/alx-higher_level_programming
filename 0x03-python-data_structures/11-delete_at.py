@@ -5,3 +5,4 @@ def delete_at(my_list=[], idx=0):
     """
     if 0 <= idx < len(my_list):
         return [el for el in my_list if my_list.index(el) != idx]
+    return my_list
