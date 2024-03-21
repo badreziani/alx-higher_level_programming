@@ -3,4 +3,5 @@ def update_dictionary(a_dictionary, key, value):
     """
     Replaces or adds key/value in a dictionary.
     """
-    a_dictionary[key] = value
+    if a_dictionary is not None:
+        a_dictionary[key] = value
