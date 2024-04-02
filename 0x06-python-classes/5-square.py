@@ -57,4 +57,5 @@ class Square:
         """Prints in stdout the square with the character #:
         if size is equal to 0, print an empty line
         """
-        print(f"{'\n'.join(['#' * self.__size] * self.__size))}")
+        my_str = "\n".join(["#" * self.__size] * self.__size)
+        print(my_str)
