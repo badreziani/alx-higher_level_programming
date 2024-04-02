@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""This file defines an empty class 'Square'
+"""
+
 
 class Square:
     """Square class
