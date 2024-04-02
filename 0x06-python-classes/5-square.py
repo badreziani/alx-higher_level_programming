@@ -57,7 +57,7 @@ class Square:
         """Prints in stdout the square with the character #:
         if size is equal to 0, print an empty line
         """
-        my_str = ""
+        my_str = "\n"
         if self.__size > 0:
             my_str = "{}".format("{}\n".format("#" * self__size) * self.__size)
         print(my_str)
