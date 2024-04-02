@@ -9,5 +9,4 @@ def safe_print_list(my_list=[], x=0):
     except Exception:
         index += -1
         print()
-    finally:
-        return index + 1
+    return index + 1
