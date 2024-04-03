@@ -16,7 +16,7 @@ class Square:
         ValueError: if if size is less than 0
     """
 
-    def __init__(self, size=0i, postion=(0, 0)):
+    def __init__(self, size=0, position=(0, 0)):
         if not isinstance(size, int):
             raise TypeError("size must be an integer")
         if size < 0:
@@ -26,7 +26,7 @@ class Square:
         if isinstance(position, tuple) and\
                 len(position) == 2 and\
                 all(isinstance(x, int) and x >= 0 for x in position):
-            self.__postion = postion
+            self.__position = position
         else:
             raise TypeError("position must be a tuple of 2 positive integers")
 
