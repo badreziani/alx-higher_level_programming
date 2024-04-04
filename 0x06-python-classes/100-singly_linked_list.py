@@ -18,7 +18,7 @@ class Node:
         """__init__ the constrcutor of the class.
         """
 
-        self.__data = date
+        self.__data = data
         self.__next_node = next_node
 
     @property
@@ -70,7 +70,7 @@ class SinglyLinkedList:
         """__init__ the constructor of the class.
         """
 
-        self.__head = None
+        self.head = None
 
     def __str__(self):
         """__str__ this magic method
