@@ -18,8 +18,8 @@ class Node:
         """__init__ the constrcutor of the class.
         """
 
-        self.__data = data
-        self.__next_node = next_node
+        self.data = data
+        self.next_node = next_node
 
     @property
     def data(self):
