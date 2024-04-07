@@ -59,7 +59,7 @@ class Rectangle:
     def __str__(self):
         """returns the representation of a rectangle object"""
 
-        if self.perimiter() == 0:
+        if self.__width == 0 or self.__height == 0:
             return ""
         my_repr = "".join("#" for _ in range(self.width))
         return "\n".join(my_repr for _ in range(self.height))
