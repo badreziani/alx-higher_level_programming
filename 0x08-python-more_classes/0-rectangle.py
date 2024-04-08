@@ -1,5 +1,9 @@
 #!/usr/bin/python3
+"""This module contains the definit of
+the class Rectangle
+"""
+
 
 class Rectangle:
-    """Define a Rectangle class"""
+    """Defines a Rectangle class"""
     pass
