@@ -5,12 +5,12 @@ of class `MyList`
 """
 
 
-def class MyList(list):
+class MyList(list):
 
     """Class MyList"""
 
     def print_sorted(self):
         """prints the list, but sorted (ascending sort)."""
 
-        sorted_str = str(s).join(", ") for s in sorted(self)
-        print("[{sorted_str}]".format(str))
+        sorted_str = ", ".join(str(x) for x in sorted(self))
+        print("[{}]".format(sorted_str))
