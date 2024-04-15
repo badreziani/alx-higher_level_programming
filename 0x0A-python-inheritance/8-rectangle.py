@@ -2,7 +2,7 @@
 """
     Definition of class Rectangle
 """
-
+BaseGeometry = __import__("7-base_geometry").BaseGeometry
 
 class Rectangle(BaseGeometry):
     """Class Rectancle"""
@@ -11,7 +11,7 @@ class Rectangle(BaseGeometry):
         """Instantiate a new Rectangle
         with width and height"""
 
-        super.integer_validator("w", width)
+        self.integer_validator("w", width)
         self.__width = width
-        super.integer_validator("h", height)
+        self.integer_validator("h", height)
         self.__height = height
