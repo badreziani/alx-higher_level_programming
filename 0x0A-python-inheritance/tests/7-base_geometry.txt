@@ -1,0 +1,31 @@
+"""
+	Task 7 tests
+"""
+
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+>>> bg = BaseGeometry()
+
+>>> bg.area()
+Traceback (most recent call last):
+	...
+Exception: area() is not implemented
+
+>>> bg.integer_validator("a_string", "Badre")
+Traceback (most recent call last):
+	...
+TypeError: Badre must be an integer
+>>> bg.integer_validator("zero", 0)
+Traceback (most recent call last):
+	...
+ValueError: 0 must be greater than 0
+
+>>> bg.integer_validator("neg", -5)
+Traceback (most recent call last):
+        ...
+ValueError: -5 must be greater than 0
+
+>>> bg.integer_validator("infinite", int(float("inf")))
+Traceback (most recent call last):
+	...
+OverflowError: cannot convert float infinity to integer
