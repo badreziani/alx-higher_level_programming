@@ -10,11 +10,13 @@
 Traceback (most recent call last):
 	...
 Exception: area() is not implemented
+>>> bg.integer_validator("pos", 5)
 
 >>> bg.integer_validator("a_string", "Badre")
 Traceback (most recent call last):
 	...
 TypeError: Badre must be an integer
+
 >>> bg.integer_validator("zero", 0)
 Traceback (most recent call last):
 	...
