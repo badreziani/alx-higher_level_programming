@@ -23,17 +23,17 @@ TypeError: integer_validator() missing 1 required positional argument: 'value'
 >>> bg.integer_validator("a_string", "Badre")
 Traceback (most recent call last):
 	...
-TypeError: Badre must be an integer
+TypeError: a_string must be an integer
 
 >>> bg.integer_validator("zero", 0)
 Traceback (most recent call last):
 	...
-ValueError: 0 must be greater than 0
+ValueError: zero must be greater than 0
 
 >>> bg.integer_validator("neg", -5)
 Traceback (most recent call last):
         ...
-ValueError: -5 must be greater than 0
+ValueError: neg must be greater than 0
 
 >>> bg.integer_validator("infinite", int(float("inf")))
 Traceback (most recent call last):
