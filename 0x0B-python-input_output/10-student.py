@@ -24,6 +24,6 @@ class Student:
 
         s_attrs = self.__dict__
 
-        if type(attrs) is list and all(type(attr) in attrs is str):
-            s_attrs = {key: value for s_attrs.items() if key in attrs}
+        if type(attrs) is list and all(type(attr) is str for attr in attrs):
+            s_attrs = {k: v for k, v in s_attrs.items() if k in attrs}
         return s_attrs
