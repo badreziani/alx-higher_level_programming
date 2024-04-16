@@ -3,8 +3,6 @@
 9-student module
 """
 
-class_to_json = __import__('8-class_to_json').class_to_json
-
 
 class Student:
     """Class Student.
@@ -24,4 +22,4 @@ class Student:
         retrieves a dictionary representation of a Student instance
         """
 
-        return class_to_json(self)
+        return self.__dict__
