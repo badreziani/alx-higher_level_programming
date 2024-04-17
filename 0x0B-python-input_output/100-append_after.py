@@ -11,12 +11,12 @@ def append_after(filename="", search_string="", new_string=""):
     """
 
     with open(filename) as f:
-        lines = r_file.readlines()
+        lines = f.readlines()
 
     with open(filename, mode="w") as f:
         new_text = ""
         for line in lines:
-            s += line
+            new_text += line
             if search_string in line:
-                s += "\n{}".format(new_string)
+                new_text += new_string
         f.write(new_text)
