@@ -55,6 +55,20 @@ class Base:
             f.write(cls.to_json_string(objs))
 
     @classmethod
+    def load_from_file(cls):
+        """Loads content of a file and
+        returns a list of instances.
+        """
+        filename = "{}.json".format(cls.__name__)
+        try:
+            with open(filename) as f:
+                json_data = cls.from_json_string(f.read())
+                data = [cls.create(**obj) for obj in json_data]
+                return data
+        except FileNotFoundError:
+            return []
+
+    @classmethod
     def create(cls, **dictionary):
         """returns an instance with all attributes already set."""
         if cls.__name__ == "Rectangle":
