@@ -58,6 +58,7 @@ class Square(Rectangle):
             "x": self.x,
             "y": self.y
             })
+
     def __str__(self):
         """."""
         s = "[{}] ({:d}) {:d}/{:d} - {:d}"
