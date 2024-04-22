@@ -5,6 +5,7 @@ This module contains the definition of the class Base
 """
 
 import json
+import csv
 
 
 class Base:
@@ -77,3 +78,55 @@ class Base:
             dummy = cls(1)
         dummy.update(**dictionary)
         return dummy
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """serializes list_objs to a csv file."""
+
+        filename = "{}.csv".format(cls.__name__)
+        objs = ""
+        if list_objs is not None:
+            if cls.__name__ == "Rectangle":
+                for o in list_objs:
+                    s = "{},{},{},{},{}\n".format(
+                            o.id,
+                            o.width,
+                            o.height,
+                            o.x, o.y)
+                    objs += s
+            elif cls.__name__ == "Square":
+                for o in list_objs:
+                    s = "{},{},{},{}\n".format(
+                            o.id, o.size, o.x, o.y)
+                    objs += s
+        with open(filename, mode="w") as f:
+            f.write(objs)
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """deserializes list_objs from a csv file."""
+        filename = "{}.csv".format(cls.__name__)
+        try:
+            with open(filename) as f:
+                objs = []
+                data = list(csv.reader(f, delimiter=","))
+                if cls.__name__ == "Rectangle":
+                    for r in data:
+                        objs.append(cls(
+                            int(r[0]),
+                            int(r[1]),
+                            int(r[2]),
+                            int(r[3]),
+                            int(r[4])
+                            ))
+                elif cls.__name__ == "Square":
+                    for r in data:
+                        objs.append(cls(
+                            int(r[0]),
+                            int(r[1]),
+                            int(r[2]),
+                            int(r[3])
+                            ))
+                return objs
+        except FileNotFoundError:
+            return []
