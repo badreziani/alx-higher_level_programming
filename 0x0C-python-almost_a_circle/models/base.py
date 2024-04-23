@@ -50,6 +50,7 @@ class Base:
         of list_objs to a file."""
 
         filename = "{}.json".format(cls.__name__)
+        objs = []
         if list_objs is not None:
             objs = [obj.to_dictionary() for obj in list_objs]
         with open(filename, mode="w+") as f:
