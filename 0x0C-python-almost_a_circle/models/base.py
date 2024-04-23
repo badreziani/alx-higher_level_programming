@@ -6,6 +6,7 @@ This module contains the definition of the class Base
 
 import json
 import csv
+import turtle
 
 
 class Base:
@@ -131,3 +132,39 @@ class Base:
                 return objs
         except FileNotFoundError:
             return []
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        """opens a window and draws all the Rectangles and Squares."""
+        screen = turtle.Screen()
+        screen.bgcolor("#0F0F1E")
+        trtl = turtle.Turtle()
+        if list_rectangles is not None and len(list_rectangles) > 0:
+            for rect in list_rectangles:
+                trtl.goto(rect.x, rect.y)
+                trtl.begin_fill()
+                trtl.color("#fcb900")
+                trtl.fd(rect.width)
+                trtl.lt(90)
+                trtl.fd(rect.height)
+                trtl.lt(90)
+                trtl.fd(rect.width)
+                trtl.lt(90)
+                trtl.fd(rect.height)
+                trtl.end_fill()
+
+        if list_squares is not None and len(list_squares) > 0:
+            for sq in list_squares:
+                trtl.goto(sq.x + 200, sq.y + 200)
+                trtl.speed(2)
+                trtl.begin_fill()
+                trtl.color("white")
+                trtl.fd(sq.size)
+                trtl.lt(90)
+                trtl.fd(sq.size)
+                trtl.lt(90)
+                trtl.fd(sq.size)
+                trtl.lt(90)
+                trtl.fd(sq.size)
+                trtl.end_fill()
+        turtle.done()
