@@ -110,23 +110,23 @@ class Base:
         try:
             with open(filename) as f:
                 objs = []
-                data = list(csv.reader(f, delimiter=","))
+                data = [line[:-1].split(",") for line in f.readlines()]
                 if cls.__name__ == "Rectangle":
                     for r in data:
                         objs.append(cls(
-                            int(r[0]),
                             int(r[1]),
                             int(r[2]),
                             int(r[3]),
-                            int(r[4])
+                            int(r[4]),
+                            id=int(r[0])
                             ))
                 elif cls.__name__ == "Square":
                     for r in data:
                         objs.append(cls(
-                            int(r[0]),
                             int(r[1]),
                             int(r[2]),
-                            int(r[3])
+                            int(r[3]),
+                            id=int(r[0])
                             ))
                 return objs
         except FileNotFoundError:
