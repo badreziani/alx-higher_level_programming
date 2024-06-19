@@ -2,13 +2,12 @@
 
 const dict = require('./101-data.js').dict;
 
-const keys = Object.keys(dict);
-
-const newDict = keys.map(function (key) {
-  if (newDict[dict[key]] === undefined) {
-    newDict[dict[key]] = [];
+const result = Object.keys(dict).reduce((newDict, currentKey) => {
+  if (newDict[dict[currentKey]] === undefined) {
+    newDict[dict[currentKey]] = [];
   }
-  return newDict[dict[key]].push(key);
-});
+  newDict[dict[currentKey]].push(currentKey);
+  return newDict;
+}, {});
 
-console.log(newDict);
+console.log(result);
