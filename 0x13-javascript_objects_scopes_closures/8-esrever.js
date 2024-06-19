@@ -2,6 +2,7 @@
 
 exports.esrever = function (list) {
   return list.reduceRight((accumulator, currentElement) => {
-    return accumulator.push(currentElement);
+    accumulator.push(currentElement);
+    return accumulator;
   }, []);
 };
