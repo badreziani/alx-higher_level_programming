@@ -28,3 +28,6 @@ cur.execute(query, (sys.argv[4],))
 rows = cur.fetchall()
 for row in rows:
     print(row)
+
+cur.close();
+db.close();
