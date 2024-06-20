@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 """0-select_states module
+
+lists all states from the database hbtn_0e_0_usa
 """
 
 import MySQLdb
@@ -17,7 +19,7 @@ cur = db.cursor()
 query = """
     SELECT *
     FROM states
-    ORDER BY states.id
+    ORDER BY id
     """
 cur.execute(query)
 rows = cur.fetchall()
