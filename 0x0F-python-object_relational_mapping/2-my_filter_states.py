@@ -17,12 +17,12 @@ if __name__ == '__main__':
             db=sys.argv[3])
 
     cur = db.cursor()
-    name = sys.argv[4] if len(sys.argv[4]) >= 5 else ''
     query = """
     SELECT *
     FROM `states`
-    WHERE `name` = '{}'
-    """.format(name)
+    WHERE `name` = '{:s}'
+    ORDER BY `states`.`id`
+    """.format(sys.argv[4])
     cur.execute(query)
     rows = cur.fetchall()
     for row in rows:
