@@ -17,7 +17,7 @@ if __name__ == '__main__':
             db=sys.argv[3])
 
     cur = db.cursor()
-
+    name = sys.argv[4] if len(sys.argv[4]) >= 5 else ''
     query = """
     SELECT *
     FROM states
