@@ -33,5 +33,5 @@ for idx, row in enumerate(rows):
     else:
         print(row[0], end='')
 print()
-cur.close();
-db.close();
+cur.close()
+db.close()
