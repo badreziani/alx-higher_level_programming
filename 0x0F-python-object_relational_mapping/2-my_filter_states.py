@@ -19,7 +19,7 @@ if __name__ == '__main__':
     query = """
     SELECT *
     FROM `states`
-    WHERE `name` LIKE '{}'
+    WHERE `name` LIKE BINARY '{}'
     ORDER BY `states`.`id`
     """.format(sys.argv[4])
     cur.execute(query)
