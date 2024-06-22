@@ -1,6 +1,7 @@
 #!/usr/bin/python3
-"""9-model_state_filter_a module
-lists all State objects that contain the letter a from the database hbtn_0e_6_usa
+"""10-model_state_my_get
+prints the State object with the name passed as argument
+from the database hbtn_0e_6_usa
 """
 
 import sys
@@ -16,3 +17,6 @@ if __name__ == '__main__':
             pool_pre_ping=True)
     Session = sessionmaker(bind=engine)
     session = Session()
+    state_id = session.query(State.id)
+    .filter(State.name == argv[4]).one_or_none()
+    print(state_id if state_id is not None else 'Not found')
