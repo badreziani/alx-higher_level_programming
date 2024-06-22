@@ -1,6 +1,7 @@
 #!/usr/bin/python3
-"""9-model_state_filter_a module
-lists all State objects that contain the letter a from the database hbtn_0e_6_usa
+"""13-model_state_delete_a module
+deletes all State objects with a name containing
+the letter a from the database hbtn_0e_6_usa
 """
 
 import sys
@@ -16,3 +17,6 @@ if __name__ == '__main__':
             pool_pre_ping=True)
     Session = sessionmaker(bind=engine)
     session = Session()
+    states = session.query(State).filter(State.name.like('%a%')).all()
+    [session.delete(state) for state in states]
+    session.commit()
