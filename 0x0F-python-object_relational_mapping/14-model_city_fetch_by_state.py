@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-"""9-model_state_filter_a module
-lists all State objects that contain the letter a from the database hbtn_0e_6_usa
+"""14-model_city_fetch_by_state module
+prints all City objects from the database hbtn_0e_14_usa
 """
 
 import sys
@@ -8,6 +8,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
 from model_state import Base, State
+from model_city import City
 
 if __name__ == '__main__':
     engine = create_engine(
@@ -16,3 +17,6 @@ if __name__ == '__main__':
             pool_pre_ping=True)
     Session = sessionmaker(bind=engine)
     session = Session()
+    cities = session.query(City).join(State).all()
+    for city in cities:
+        pass
