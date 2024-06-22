@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """9-model_state_filter_a module
-lists all State objects that contain the letter `a` from the database hbtn_0e_6_usa
+lists all State objects that contain the letter `a`
+from the database hbtn_0e_6_usa
 """
 
 import sys
