@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-"""9-model_state_filter_a module
-lists all State objects that contain the letter a from the database hbtn_0e_6_usa
+"""11-model_state_insert module
+adds the State object “Louisiana” to the database hbtn_0e_6_usa
 """
 
 import sys
@@ -16,3 +16,7 @@ if __name__ == '__main__':
             pool_pre_ping=True)
     Session = sessionmaker(bind=engine)
     session = Session()
+    new_state = State(name='Louisiana')
+    session.add(new_state)
+    session.commit()
+    print(new_state.id)
