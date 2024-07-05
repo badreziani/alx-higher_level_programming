@@ -11,4 +11,3 @@ if __name__ == '__main__':
     print("Body response:")
     print(f"\t- type: {type(res.text)}")
     print(f"\t- content: {res.text}")
-    print(dir(res))
