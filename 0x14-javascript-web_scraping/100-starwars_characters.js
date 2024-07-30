@@ -7,8 +7,8 @@ request(url, (err, response, body) => {
   if (err) {
     console.error(err);
   } else {
-    JSON.parse(response.body).characters.map(charLink => {
-      return request(charLink, (err, response, body) => {
+    JSON.parse(response.body).characters.forEach(charLink => {
+      request(charLink, (err, response, body) => {
         if (err) {
           return;
         }

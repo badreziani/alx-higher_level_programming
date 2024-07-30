@@ -1,12 +1,19 @@
 #!/usr/bin/node
 
-const fs = require('node:fs');
-const filePath = process.argv[2];
+const request = require('request');
+const url = `https://swapi-api.alx-tools.com/api/films/${process.argv[2]}`;
 
-fs.readFile(filePath, 'utf8', (err, data) => {
+request(url, (err, response, body) => {
   if (err) {
-    console.log(err);
-    return;
+    console.error(err);
+  } else {
+    JSON.parse(response.body).characters.forEach(charLink => {
+      request(charLink, (err, response, body) => {
+        if (err) {
+          return;
+        }
+        console.log(JSON.parse(response.body).name);
+      });
+    });
   }
-  console.log(data);
 });
